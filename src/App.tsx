@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Logo from './resources/svg/Logo';
 import Form from './components/Form';
-import { useWindupString,} from "windups"
+import { useWindupString} from "windups"
 
 
 
 function App() {
 
   const [text] = useWindupString(
-    "Que te apetece ver hoy 😈"
+    "Que te apetece ver hoy 😈",{
+      pace: (char) =>(char === " " ? 80 : 40)
+    }
   );
 
   return (
