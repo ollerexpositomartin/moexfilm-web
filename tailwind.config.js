@@ -8,7 +8,7 @@ module.exports = {
         Roboto: ["Roboto","sans-serif"]
       },
       backgroundImage: {
-        'img-login': "url('/src/resources/images/xino.jpg')",
+        'img-login': "url('/src/assets/images/xino.jpg')",
       }
     },
   },
