@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "./customHooks/useAuth";
+import { useAuth } from "./customHooks/useAuth";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+
 
 const ProtectedRoute = ({children}:any) => {
   const {isAuthenticated} = useAuth();
@@ -11,12 +12,10 @@ const ProtectedRoute = ({children}:any) => {
   return children;
 }
 
-
 function App() {
-  
   return (
       <Routes>
-        <Route path="/login" element={<AuthProvider><LoginPage /></AuthProvider>} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<ProtectedRoute><HomePage /></ProtectedRoute>}/>
       </Routes>
   );

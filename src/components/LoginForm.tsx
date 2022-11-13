@@ -1,24 +1,14 @@
-import { FormEventHandler, useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
 import { useAuth } from "../customHooks/useAuth";
 
 function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { isAuthenticated, login } = useAuth();
-    const navigate = useNavigate();
-
+    const { login } = useAuth();
 
     const handleSubmit = async (e: any) => {
-        e.preventDefault();
-        login(email, password).then(() =>{
-            if(isAuthenticated){
-               
-            }
-        })
-       
-        
-
+        e.preventDefault()
+        login(email, password)
     }
 
     return (
@@ -36,7 +26,6 @@ function LoginForm() {
                     </label>
                     <button type="submit" className="btn btn-primary mt-5 w-full font-Roboto ">Login</button>
                 </form>
-
             </div>
         </>
     );
