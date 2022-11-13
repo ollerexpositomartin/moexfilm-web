@@ -10,15 +10,8 @@ import { useAuth } from "../../customHooks/useAuth";
 import { IndexProvider, useIndex } from "../../customHooks/useIndex";
 
 function Drawer() {
-  const {index} = useIndex();
   const {logout} = useAuth();
 
-  useEffect(()=>{
-    console.log(index)
-    switch(index){
-      case 6:logout()
-    }
-  })
   
 
   return ( 
