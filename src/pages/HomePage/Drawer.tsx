@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { BsFillHouseFill,BsFillGearFill, BsPerson,BsMegaphoneFill,BsCompassFill,BsDoorClosed } from "react-icons/bs";
 import { GiPartyPopper } from "react-icons/gi";
@@ -5,12 +6,22 @@ import { GiPartyPopper } from "react-icons/gi";
 import Logo from "../../assets/svg/Logo";
 import DrawerButton from "../../components/DrawerButton";
 import DrawerMenu from "../../components/DrawerMenu";
-import { IndexProvider } from "../../customHooks/useIndex";
+import { useAuth } from "../../customHooks/useAuth";
+import { IndexProvider, useIndex } from "../../customHooks/useIndex";
 
 function Drawer() {
+  const {index} = useIndex();
+  const {logout} = useAuth();
 
-  return (
-    <IndexProvider>
+  useEffect(()=>{
+    console.log(index)
+    switch(index){
+      case 6:logout()
+    }
+  })
+  
+
+  return ( 
     <div className="h-screen w-fit pt-5 pl-2  shadow-md  pr-2">
       <Logo width={48}/>  
         <DrawerMenu name={"MENU"}>
@@ -27,7 +38,6 @@ function Drawer() {
          <DrawerButton name="Log Out"icon={BsDoorClosed}/>
         </DrawerMenu>
         </div>
-    </IndexProvider>
   );
 }
 

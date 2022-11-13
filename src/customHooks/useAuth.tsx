@@ -5,11 +5,13 @@ import { API_URL } from "../config";
 type Auth = {
     isAuthenticated: Boolean,
     login: (email: string, password: string) => Promise<void>
+    logout: () => void
 }
 
 const AuthContext = createContext<Auth>({
     isAuthenticated: false,
-    login: async () => { }
+    login: async () => { },
+    logout: () => {}
 })
 
 export const useAuth = () => {
@@ -39,8 +41,12 @@ export const AuthProvider = ({ children }: any) => {
         })
     }
 
+    const logout = () =>{
+        setIsAuthenticated(false);
+    }
+
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login }}>
+        <AuthContext.Provider value={{ isAuthenticated, login,logout }}>
             {children}
         </AuthContext.Provider>
     )
