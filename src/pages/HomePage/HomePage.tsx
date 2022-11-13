@@ -1,12 +1,15 @@
 import React from "react";
+import Wallpaper from "../LoginPage/Wallpaper";
 import Drawer from "./Drawer";
-import Navbar from "./Navbar";
+import Hero from "./Hero";
+import Profile from "./Profile";
 
 function HomePage() {
   return (
-    <div className="pl-3 pr-3">
-      <Navbar />
+    <div className=" flex flex-row">
       <Drawer />
+      <Hero/>
+      <Profile/>
     </div>
   );
 }

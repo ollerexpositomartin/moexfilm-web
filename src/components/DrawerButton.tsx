@@ -34,7 +34,7 @@ function DrawerButton ({icon,name}:DrawerButtonConf){
    
     return(
         <li className={`${index==buttonState.buttonPosition?'bordered':''}`}>
-        <a onClick={()=>{setPositionIndex(buttonState.buttonPosition)}} className="font-Roboto rounded-sm">
+        <a onClick={()=>{setPositionIndex(buttonState.buttonPosition)}} className={`${index==buttonState.buttonPosition?'text-primary':''} font-Roboto`}>
             {React.createElement(icon, { width: 15, height: 15, color:`${index==buttonState.buttonPosition?'#6419E6':''}`})}
             {name}</a>
       </li>
