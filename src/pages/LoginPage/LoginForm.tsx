@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../customHooks/useAuth";
+import { useAuth } from "../../customHooks/useAuth";
 
 function LoginForm() {
     const [email, setEmail] = useState('');
@@ -12,7 +12,6 @@ function LoginForm() {
     }
 
     return (
-        <>
             <div className="h-96 relative top-24 ">
                 <h1 className="text-gray-200 text-4xl font-semibold pb-5 font-Roboto m-5">Welcome back</h1>
                 <form className="mt-5 m-5  mr-10" onSubmit={handleSubmit}>
@@ -27,7 +26,6 @@ function LoginForm() {
                     <button type="submit" className="btn btn-primary mt-5 w-full font-Roboto ">Login</button>
                 </form>
             </div>
-        </>
     );
 }
 
