@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDrawer } from "../customHooks/useDrawer";
+import { useIndex } from "../customHooks/useIndex";
 import {IconType,IconBase} from 'react-icons/lib'
 import { GenIcon } from "react-icons";
 import { BsFillHouseFill, BsFilm, BsTvFill } from "react-icons/bs";
@@ -21,7 +21,7 @@ class ButtonState {
 }
 
 function DrawerButton ({icon,name}:DrawerButtonConf){
-    const {index,setPositionIndex} = useDrawer()
+    const {index,setPositionIndex} = useIndex()
 
     useEffect(()=>{
         ButtonCounter.counter = -1
@@ -34,7 +34,7 @@ function DrawerButton ({icon,name}:DrawerButtonConf){
    
     return(
         <li className={`${index==buttonState.buttonPosition?'bordered':''}`}>
-        <a onClick={()=>{setPositionIndex(buttonState.buttonPosition)}} className={`${index==buttonState.buttonPosition?'text-primary':''} font-Roboto`}>
+        <a onClick={()=>{setPositionIndex(buttonState.buttonPosition)}} className={`${index==buttonState.buttonPosition?'text-primary':''} font-Roboto  rounded-md`}>
             {React.createElement(icon, { width: 15, height: 15, color:`${index==buttonState.buttonPosition?'#6419E6':''}`})}
             {name}</a>
       </li>
