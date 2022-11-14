@@ -3,7 +3,7 @@ import InputSearch from "../../components/InputSearch";
 
 function Profile() {
   return (
-    <div className="h-screen w-fit pl-3 shadow-md pt-5 pr-3">
+    <div className=" w-fit pl-3 shadow-md pt-5 pr-3">
       <div className="flex flex-row">
         <InputSearch/>
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

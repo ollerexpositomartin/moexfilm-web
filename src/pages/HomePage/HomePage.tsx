@@ -4,6 +4,7 @@ import { IndexProvider, useIndex } from "../../customHooks/useIndex";
 import Wallpaper from "../LoginPage/Wallpaper";
 import Drawer from "./Drawer";
 import HeroHome from "./HeroHome/HeroHome";
+import HeroUpload from "./HeroUpload/HeroUpload";
 import Profile from "./Profile";
 
 function HomePage() {
@@ -12,19 +13,20 @@ function HomePage() {
 
   useEffect(()=>{
     switch(index){
-      case 6:logout()
+      case 9:logout()
     }
   })
 
   const selectHero = (index:number) => {
     switch(index){
       case 0: return <HeroHome/>
+      case 5: return <HeroUpload/>
     }
     return <></>
   }
   
   return (
-    <div className=" flex flex-row">  
+    <div className=" flex w-full  absolute flex-row ">  
       <Drawer />
       {selectHero(index)}
       <Profile/>

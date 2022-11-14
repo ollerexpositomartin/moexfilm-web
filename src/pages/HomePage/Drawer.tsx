@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { BsFillHouseFill,BsFillGearFill, BsPerson,BsMegaphoneFill,BsCompassFill,BsDoorClosed } from "react-icons/bs";
+import { BsFillHouseFill,BsFillGearFill, BsPerson,BsMegaphoneFill,BsCompassFill,BsDoorClosed,BsFillCloudUploadFill,BsFileEarmarkPlayFill } from "react-icons/bs";
 import { GiPartyPopper } from "react-icons/gi";
 
 import Logo from "../../assets/svg/Logo";
@@ -25,6 +25,10 @@ function Drawer() {
         <DrawerMenu name="SOCIAL">
          <DrawerButton name="Friends" icon={BsPerson} />
          <DrawerButton name="Watch Party"icon={GiPartyPopper}/>
+        </DrawerMenu>
+        <DrawerMenu name="MEDIA">
+         <DrawerButton name="Upload" icon={BsFillCloudUploadFill} />
+         <DrawerButton name="Requests"icon={BsFileEarmarkPlayFill}/>
         </DrawerMenu>
         <DrawerMenu name="GENERAL">
          <DrawerButton name="Settings" icon={BsFillGearFill} />
