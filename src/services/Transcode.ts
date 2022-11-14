@@ -12,7 +12,7 @@ export const transcode = async (file:File) => {
 
 
       ffmpeg.FS('writeFile',name,await fetchFile(file));
-      await ffmpeg.run('-i',name, 'output.mp4');
+      await ffmpeg.run('-i',name,'-acodec','aac','-vcodec','copy','output.mp4');
       const data = ffmpeg.FS("readFile", "output.mp4");
       console.log(data)
 }
