@@ -1,1 +1,1 @@
-export let API_URL = 'https://moexfilm-server.onrender.com'
+export let API_URL = 'https://moexfilm-server.onrender.com/api/v1'
