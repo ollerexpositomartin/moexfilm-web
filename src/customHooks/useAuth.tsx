@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }: any) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const login = async (email: string, password: string) => {
-        await fetch(API_URL.concat('/auth/signIn'), {
+        await fetch(API_URL.concat('/auth/v1/signIn'), {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
